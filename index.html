@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ULTIMATE PREMIUM | @zeshannn</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@400;600;700&family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ==========================================
+       FEATURE 3: ANIMATED GRADIENT BACKGROUND
+    ========================================== */
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      background: linear-gradient(-45deg, #0b0d12, #1a0b1a, #0f1a24, #14100c);
+      background-size: 400% 400%;
+      animation: gradientBG 16s ease infinite;
+      color: #e2e8f0;
+      transition: background 0.5s, color 0.3s;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ==========================================
+       FEATURE 10: LIGHT MODE
+    ========================================== */
+    body.light-mode {
+      background: linear-gradient(-45deg, #fdfbfb, #ebedee, #f8f0e7, #e8e0d5);
+      background-size: 400% 400%;
+      animation: gradientBG 16s ease infinite;
+      color: #1a1a2e;
+    }
+
+    body.light-mode .container {
+      background: rgba(255, 255, 255, 0.88);
+      border-color: #d4a373;
+      box-shadow: 0 0 40px #d4a37366;
+    }
+
+    body.light-mode input {
+      background: #ffffff;
+      color: #1a1a2e;
+      border-color: #80deea;
+    }
+
+    body.light-mode pre {
+      background: #f8f9fa;
+      color: #1a1a2e;
+      border-color: #80deea;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.05);
+    }
+
+    body.light-mode .credit {
+      color: #b05a7a;
+    }
+    body.light-mode .status-msg {
+      color: #00838f;
+    }
+    body.light-mode .btn-box button {
+      color: #d4a373;
+      border-color: #d4a373;
+    }
+    body.light-mode .btn-box button:hover {
+      background: #f0629222;
+      color: #f06292;
+      border-color: #f06292;
+    }
+    body.light-mode .toggle-label {
+      color: #00838f;
+    }
+    body.light-mode .switch {
+      background: #d0d8e0;
+      border-color: #f06292;
+    }
+    body.light-mode .switch .slider {
+      background: #f06292;
+      left: 26px;
+    }
+    body.light-mode h2 {
+      color: #b05a7a;
+    }
+    body.light-mode h2 span {
+      color: #00838f;
+    }
+
+    /* ==========================================
+       CONTAINER
+    ========================================== */
+    .container {
+      width: 100%;
+      max-width: 780px;
+      padding: 38px 35px;
+      border-radius: 22px;
+      background: rgba(18, 24, 34, 0.88);
+      border: 2px solid #d4a373;
+      box-shadow: 0 0 40px #d4a37344, 0 0 80px #f0629233;
+      backdrop-filter: blur(8px);
+      transition: all 0.4s ease;
+    }
+
+    /* ==========================================
+       TOGGLE (Feature 10)
+    ========================================== */
+    .toggle-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+
+    .toggle-label {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #80deea;
+      cursor: pointer;
+      user-select: none;
+      transition: 0.3s;
+    }
+
+    .switch {
+      position: relative;
+      width: 52px;
+      height: 28px;
+      background: #2a2a3a;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      border: 2px solid #80deea;
+      flex-shrink: 0;
+    }
+
+    .switch .slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: #80deea;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    /* ==========================================
+       HEADING
+    ========================================== */
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #f0c6c0;
+      text-shadow: 0 0 25px #f0629255;
+      margin-top: -5px;
+    }
+
+    h2 span {
+      display: block;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      color: #80deea;
+      text-shadow: 0 0 15px #80deea44;
+      margin-top: 4px;
+    }
+
+    /* ==========================================
+       INPUT + AUTO-VALIDATE (Feature 8)
+    ========================================== */
+    input {
+      width: 100%;
+      padding: 18px 22px;
+      border-radius: 14px;
+      font-size: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      outline: none;
+      box-sizing: border-box;
+      margin-top: 18px;
+      background: #141a24;
+      border: 3px solid #80deea;
+      color: #e2e8f0;
+      transition: 0.3s;
+      text-align: left;
+    }
+
+    input.valid {
+      border-color: #4caf50 !important;
+      box-shadow: 0 0 30px #4caf5066, 0 0 60px #4caf5033 !important;
+    }
+
+    input.invalid {
+      border-color: #f44336 !important;
+      box-shadow: 0 0 30px #f4433666, 0 0 60px #f4433633 !important;
+    }
+
+    input::placeholder {
+      color: #8090a8;
+      font-weight: 300;
+      font-size: 18px;
+    }
+
+    /* ==========================================
+       BUTTONS
+    ========================================== */
+    .btn-box {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn-box button {
+      flex: 1 1 auto;
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      transition: 0.25s;
+      border: 2px solid #d4a373;
+      background: transparent;
+      color: #d4a373;
+      min-width: 100px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .btn-box button:hover {
+      background: #f0629222;
+      color: #f48fb1;
+      border-color: #f48fb1;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ==========================================
+       OUTPUT BOX + CHHOTA SPINNER (Feature 9)
+    ========================================== */
+    .output-wrapper {
+      margin-top: 24px;
+      position: relative;
+    }
+
+    pre {
+      padding: 24px 26px;
+      border-radius: 14px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow-x: auto;
+      max-height: 480px;
+      font-size: 15px;
+      font-family: 'Fira Code', monospace;
+      font-weight: 400;
+      background: #141a24;
+      border: 2px solid #80deea;
+      color: #cbd5e1;
+      line-height: 1.8;
+      text-align: left;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.4);
+      transition: 0.3s;
+      min-height: 100px;
+      position: relative;
+    }
+
+    /* ---- CHHOTA SPINNER (Output box ke andar center) ---- */
+    .spinner {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      border: 4px solid rgba(128, 222, 234, 0.15);
+      border-top: 4px solid #80deea;
+      border-right: 4px solid #f06292;
+      border-radius: 50%;
+      animation: spin 0.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      z-index: 10;
+    }
+
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .spinner.active {
+      display: block;
+    }
+
+    /* Spinner ke neeche "LOADING..." text */
+    .spinner-text {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, calc(-50% + 32px));
+      font-size: 12px;
+      font-weight: 700;
+      color: #80deea;
+      letter-spacing: 3px;
+      font-family: 'Poppins', sans-serif;
+      z-index: 10;
+    }
+
+    .spinner.active + .spinner-text {
+      display: block;
+    }
+
+    /* Spinner active hone par output text thoda fade ho jaye */
+    .output-wrapper.loading pre {
+      opacity: 0.25;
+      filter: blur(1px);
+    }
+
+    /* ==========================================
+       CREDIT & STATUS
+    ========================================== */
+    .credit {
+      margin-top: 22px;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #f0c6c0;
+    }
+
+    .status-msg {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 15px;
+      min-height: 28px;
+      color: #80deea;
+      letter-spacing: 0.5px;
+    }
+
+    /* ==========================================
+       RESPONSIVE
+    ========================================== */
+    @media (max-width: 550px) {
+      .container {
+        padding: 20px 16px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      input {
+        font-size: 17px;
+        padding: 14px 16px;
+      }
+      .btn-box button {
+        font-size: 13px;
+        padding: 12px 10px;
+        min-width: 70px;
+      }
+      pre {
+        font-size: 13px;
+        padding: 16px;
+        max-height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ===== TOGGLE (Feature 10) ===== -->
+  <div class="toggle-wrapper">
+    <span class="toggle-label" id="themeLabel">🌙 DARK</span>
+    <div class="switch" onclick="toggleTheme()">
+      <div class="slider"></div>
+    </div>
+  </div>
+
+  <!-- ===== HEADING ===== -->
+  <h2>
+    ⤷ NUMBER OSINT • BY  ⤶
+    <span>@zeshannn</span>
+  </h2>
+
+  <!-- ===== INPUT (Feature 8 Auto-Validate) ===== -->
+  <input type="text" id="mobile" placeholder="Enter mobile number..." oninput="validateInput()">
+
+  <!-- ===== BUTTONS ===== -->
+  <div class="btn-box">
+    <button onclick="lookup()">🔎 Lookup</button>
+    <button onclick="copyJSON()">📋 Copy</button>
+    <button onclick="clearAll()">🗑️ Clear</button>
+    <button onclick="example()">📝 Example</button>
+  </div>
+
+  <!-- ===== OUTPUT + SPINNER (Feature 9 - Chhota) ===== -->
+  <div class="output-wrapper" id="outputWrapper">
+    <div class="spinner" id="spinner"></div>
+    <div class="spinner-text">LOADING</div>
+    <pre id="output">[*] Ready.</pre>
+  </div>
+
+  <div class="credit">𝐓𝐨𝐨𝐥 𝐛𝐲 ┇ @zeshannn</div>
+  <div class="status-msg" id="statusMsg"></div>
+</div>
+
+<script>
+  // ============================================
+  // API CONFIG
+  // ============================================
+  const API_KEY = "c3177593b1359e00d0e6c1a2d2cc6408";
+  const BASE_URL = "https://astha-9vd8.onrender.com/tapi-";
+  let lastJSON = null;
+  let isTyping = false;
+  let typeInterval = null;
+
+  // DOM Refs
+  const inputEl = document.getElementById('mobile');
+  const outputEl = document.getElementById('output');
+  const statusMsg = document.getElementById('statusMsg');
+  const spinner = document.getElementById('spinner');
+  const outputWrapper = document.getElementById('outputWrapper');
+
+  // ============================================
+  // FEATURE 10: DARK/LIGHT TOGGLE
+  // ============================================
+  let isDark = true;
+
+  function toggleTheme() {
+    isDark = !isDark;
+    document.body.classList.toggle('light-mode', !isDark);
+    document.getElementById('themeLabel').textContent = isDark ? '🌙 DARK' : '☀️ LIGHT';
+  }
+
+  // ============================================
+  // FEATURE 8: AUTO-VALIDATE
+  // ============================================
+  function validateInput() {
+    const raw = inputEl.value.trim();
+    const clean = raw.replace(/[^0-9]/g, '');
+    if (clean.length === 0) {
+      inputEl.classList.remove('valid', 'invalid');
+      return;
+    }
+    if (clean.length >= 10) {
+      inputEl.classList.add('valid');
+      inputEl.classList.remove('invalid');
+    } else {
+      inputEl.classList.add('invalid');
+      inputEl.classList.remove('valid');
+    }
+  }
+
+  // ============================================
+  // FEATURE 9: SPINNER (Chhota)
+  // ============================================
+  function showSpinner() {
+    spinner.classList.add('active');
+    outputWrapper.classList.add('loading');
+  }
+
+  function hideSpinner() {
+    spinner.classList.remove('active');
+    outputWrapper.classList.remove('loading');
+  }
+
+  // ============================================
+  // FEATURE 5: TYPEWRITER (SLOW - 35ms)
+  // ============================================
+  function typeWriter(text, element, speed = 35) {
+    return new Promise((resolve) => {
+      // Agar already typing chal raha hai, toh force stop karo
+      if (isTyping) {
+        clearInterval(typeInterval);
+        isTyping = false;
+      }
+
+      isTyping = true;
+      element.textContent = '';
+      let i = 0;
+
+      typeInterval = setInterval(() => {
+        if (i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+          element.scrollTop = element.scrollHeight;
+        } else {
+          clearInterval(typeInterval);
+          isTyping = false;
+          resolve();
+        }
+      }, speed);
+    });
+  }
+
+  // ============================================
+  // LOOKUP FUNCTION (with all features)
+  // ============================================
+  async function lookup() {
+    const num = inputEl.value.trim();
+
+    if (!num) {
+      outputEl.textContent = '{"error": "Enter a number"}';
+      statusMsg.innerHTML = "";
+      return;
+    }
+
+    const cleanNum = num.replace(/[^0-9]/g, '');
+    if (cleanNum.length < 10) {
+      outputEl.textContent = '{"error": "Invalid number (min 10 digits)"}';
+      statusMsg.innerHTML = "";
+      return;
+    }
+
+    // Show spinner
+    showSpinner();
+    statusMsg.innerHTML = "⏳ Fetching data...";
+
+    try {
+      const res = await fetch(`${BASE_URL}${API_KEY}?Astha=${cleanNum}`);
+      let data = await res.json();
+      let formattedData = {};
+
+      if (data && data.status !== "error" && data.data) {
+        formattedData = {
+          success: true,
+          number: cleanNum,
+          results: data.data,
+          credit: "@zeshannn"
+        };
+      } else {
+        formattedData = {
+          success: false,
+          error: data?.message || "No data found",
+          number: cleanNum,
+          credit: "@zeshannn"
+        };
+      }
+
+      lastJSON = formattedData;
+      hideSpinner();
+
+      const jsonString = JSON.stringify(formattedData, null, 2);
+
+      // 🔥 SLOW TYPEWRITER — 35ms per character
+      await typeWriter(jsonString, outputEl, 35);
+
+      statusMsg.innerHTML = "✅ Lookup complete | @zeshannn";
+
+    } catch (err) {
+      hideSpinner();
+      const errorData = {
+        error: err.message,
+        credit: "@zeshannn"
+      };
+      lastJSON = errorData;
+      const jsonString = JSON.stringify(errorData, null, 2);
+      await typeWriter(jsonString, outputEl, 35);
+      statusMsg.innerHTML = "❌ Error | @zeshannn";
+    }
+  }
+
+  // ============================================
+  // COPY, CLEAR, EXAMPLE
+  // ============================================
+  function copyJSON() {
+    if (!lastJSON) {
+      alert("No JSON to copy. Do a lookup first.");
+      return;
+    }
+    navigator.clipboard.writeText(JSON.stringify(lastJSON, null, 2))
+      .then(() => {
+        statusMsg.innerHTML = "📋 JSON copied! | @zeshannn";
+        setTimeout(() => {
+          if (statusMsg.innerHTML.includes("copied")) statusMsg.innerHTML = "";
+        }, 2000);
+      })
+      .catch(() => alert("Failed to copy."));
+  }
+
+  function clearAll() {
+    // Stop typewriter
+    if (isTyping) {
+      clearInterval(typeInterval);
+      isTyping = false;
+    }
+    inputEl.value = "";
+    outputEl.textContent = "[*] Ready";
+    lastJSON = null;
+    statusMsg.innerHTML = "";
+    inputEl.classList.remove('valid', 'invalid');
+    hideSpinner();
+  }
+
+  function example() {
+    inputEl.value = "9876543210";
+    validateInput();
+    lookup();
+  }
+</script>
+</body>
+</html>
